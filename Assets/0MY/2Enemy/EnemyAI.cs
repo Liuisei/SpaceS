@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] EnemyLookPlayer enemyLookPlayer;
     [SerializeField] EnemyMoveTo enemyMoveTo;
+    [SerializeField] EnemyAttack enemyAttack;
 
 
     Transform _terget;
@@ -29,6 +30,8 @@ public class EnemyAI : MonoBehaviour
 
             enemyMoveTo.SetPremission(true);
 
+            enemyAttack.SetisFire(true);
+
 
             Debug.Log("AI csrch in");
         }
@@ -41,6 +44,8 @@ public class EnemyAI : MonoBehaviour
         {
             enemyLookPlayer.SetPremission(false);
             Debug.Log("AI csrch leave");
+            enemyAttack.SetisFire(false);
+
         }
     }
     
