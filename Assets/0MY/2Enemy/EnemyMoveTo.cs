@@ -7,7 +7,7 @@ public class EnemyMoveTo : MonoBehaviour
     [SerializeField] Transform _target;   
     [SerializeField] Transform _observer; 
     [SerializeField] int _range = 10;     
-    [SerializeField] float _forceMagnitude = 10f;
+    [SerializeField] float _speed = 10f;
     [SerializeField] bool _premission = false;
     private Rigidbody2D _rigidbody;
 
@@ -35,7 +35,7 @@ public class EnemyMoveTo : MonoBehaviour
             {
                 // 目的地に向かって力を加えるコードをここに記述
                 Vector2 direction = (_target.position - _observer.position).normalized;
-                _rigidbody.AddForce(direction * _forceMagnitude);
+                _rigidbody.AddForce(direction * _speed);
             }
         }
     }
