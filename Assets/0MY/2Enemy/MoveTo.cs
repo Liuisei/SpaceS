@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoveTo : MonoBehaviour
+public class MoveTo : MonoBehaviour
 {
-    [SerializeField] Transform _target;   
-    [SerializeField] Transform _observer; 
-    [SerializeField] int _range = 10;     
-    [SerializeField] float _speed = 10f;
-    [SerializeField] bool _premission = false;
+    [SerializeField] Transform _target;   // 移動の目標となるTransform
+    [SerializeField] Transform _observer; // 移動を監視するTransform
+    [SerializeField] int _range = 10;     // 移動を始める範囲
+    [SerializeField] float _speed = 10f;  // 移動速度
+    [SerializeField] bool _movePremission = false; // 移動を許可するかどうかのフラグ
     private Rigidbody2D _rigidbody;
-
-    
 
     private void Start()
     {
@@ -20,33 +18,36 @@ public class EnemyMoveTo : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // 敵の位置と目的地との距離を計算
-
-        if (_premission == true && _target != null)
+        if (_movePremission == true && _target != null)
         {
+            // 敵の位置と目的地との距離を計算
             float distanceToTarget = Vector2.Distance(_observer.position, _target.position);
 
             // 距離が指定した範囲内にあるかチェック
             if (distanceToTarget <= _range)
             {
-
+                // 何もしない（範囲内にいるため）
             }
             else
             {
                 // 目的地に向かって力を加えるコードをここに記述
+
+                // 目的地へのベクトルを計算し、正規化（長さが1になる）します。
                 Vector2 direction = (_target.position - _observer.position).normalized;
+
+                // Rigidbody2Dに力を加えて移動させます。
                 _rigidbody.AddForce(direction * _speed);
             }
         }
     }
-    public void SetPremission(bool premisson)
+
+    public void SetMovePremission(bool premisson)
     {
-        _premission = premisson;
+        _movePremission = premisson;
     }
+
     public void SetTarget(Transform transform)
     {
         _target = transform;
     }
-
-
 }

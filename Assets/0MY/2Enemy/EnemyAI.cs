@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] EnemyLookPlayer enemyLookPlayer;
-    [SerializeField] EnemyMoveTo enemyMoveTo;
+    [SerializeField] MoveTo enemyMoveTo;
     [SerializeField] EnemyAttack enemyAttack;
 
 
@@ -28,7 +28,7 @@ public class EnemyAI : MonoBehaviour
 
             enemyMoveTo.SetTarget(collision.transform);
 
-            enemyMoveTo.SetPremission(true);
+            enemyMoveTo.SetMovePremission(true);
 
             enemyAttack.SetisFire(true);
 

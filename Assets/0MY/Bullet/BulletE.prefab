@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7537258984847818127}
   - component: {fileID: 5534096361824947445}
   - component: {fileID: 3459228432051931058}
-  m_Layer: 7
-  m_Name: Bullet
+  m_Layer: 6
+  m_Name: BulletE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
