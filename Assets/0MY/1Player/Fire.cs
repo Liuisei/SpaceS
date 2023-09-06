@@ -11,7 +11,6 @@ public class Fire : MonoBehaviour
     [SerializeField] float _bulletSpeed = 10;
     [SerializeField] float _bulletLife = 10;
 
-    private bool _isFire;
     private bool _canFire = true;
 
     private void Update()

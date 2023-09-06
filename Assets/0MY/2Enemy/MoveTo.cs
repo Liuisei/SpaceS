@@ -6,7 +6,7 @@ public class MoveTo : MonoBehaviour
 {
     [SerializeField] Transform _target;   // 移動の目標となるTransform
     [SerializeField] Transform _observer; // 移動を監視するTransform
-    [SerializeField] int _range = 10;     // 移動を始める範囲
+    [Range(1,10)] [SerializeField] float _range = 10;     // 移動を始める範囲
     [SerializeField] float _speed = 10f;  // 移動速度
     [SerializeField] bool _movePremission = false; // 移動を許可するかどうかのフラグ
     private Rigidbody2D _rigidbody;
@@ -26,7 +26,10 @@ public class MoveTo : MonoBehaviour
             // 距離が指定した範囲内にあるかチェック
             if (distanceToTarget <= _range)
             {
-                // 何もしない（範囲内にいるため）
+                Vector2 direction = -1 * (_target.position - _observer.position).normalized;
+
+                // Rigidbody2Dに力を加えて移動させます。
+                _rigidbody.AddForce(direction * _speed);
             }
             else
             {

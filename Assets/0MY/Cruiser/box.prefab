@@ -134,7 +134,10 @@ MonoBehaviour:
   sliderHP: {fileID: 0}
   maxHP: 100
   hp: 100
-  _dropItems: []
+  _dropItems:
+  - {fileID: 7099328710577389495, guid: f0ddbb87448050847a21ce38c820ff00, type: 3}
+  - {fileID: 7099328710577389495, guid: b53c9cb992c8a8c43acfd11fb47012b9, type: 3}
+  - {fileID: 7099328710577389495, guid: d93ee4636ad297a48a69e1a96a519687, type: 3}
   _spriteRenderer: {fileID: 9109483034601362495}
 --- !u!61 &2336468451083090658
 BoxCollider2D:

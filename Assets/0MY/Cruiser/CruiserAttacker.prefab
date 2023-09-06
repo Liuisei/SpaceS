@@ -28,7 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2558640721651169452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e72b5607b24dd3247a7168ad745086fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -180,8 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _observer: {fileID: 2558640721651169452}
-  _range: 4
-  _speed: 10
+  _range: 5.9919004
+  _speed: 10.45
   _movePremission: 0
 --- !u!1 &4361352096845310146
 GameObject:
@@ -199,7 +199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6857888934813643765
 Transform:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 6297063869460240852}
   - component: {fileID: 2907291679854779931}
   m_Layer: 3
-  m_Name: Cruiser 1
+  m_Name: CruiserAttacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 7099328710577389495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9033289, y: -1.2815948, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -347,8 +347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 3698058520673046559, guid: 2e9a2287fe04cba4dbd12928d99a3de0, type: 3}
   _spawnTransForm: {fileID: 6857888934813643765}
-  _damage: -10
-  _fireCD: 2.21
+  _damage: -1
+  _fireCD: 0.1
   _bulletSpeed: 150
   _bulletLife: 4.44
 --- !u!58 &8321474551313522765
