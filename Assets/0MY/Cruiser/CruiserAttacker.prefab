@@ -180,7 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _observer: {fileID: 2558640721651169452}
-  _range: 5.9919004
+  _moveLine: 8.48
+  _movelineRange: 2.75
   _speed: 10.45
   _movePremission: 0
 --- !u!1 &4361352096845310146

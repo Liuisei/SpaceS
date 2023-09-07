@@ -5,8 +5,10 @@ using UnityEngine;
 public class MoveTo : MonoBehaviour
 {
     [SerializeField] Transform _target;   // 移動の目標となるTransform
-    [SerializeField] Transform _observer; // 移動を監視するTransform
-    [Range(1,10)] [SerializeField] float _range = 10;     // 移動を始める範囲
+    [SerializeField] Transform _observer; // 移動するTransform
+    [Range(1, 10)] [SerializeField] float _moveLine = 10;     // 移動を始める範囲
+    [Range(1,  5)] [SerializeField] float _movelineRange = 2;     // 移動を始める範囲
+
     [SerializeField] float _speed = 10f;  // 移動速度
     [SerializeField] bool _movePremission = false; // 移動を許可するかどうかのフラグ
     private Rigidbody2D _rigidbody;
@@ -20,26 +22,25 @@ public class MoveTo : MonoBehaviour
     {
         if (_movePremission == true && _target != null)
         {
-            // 敵の位置と目的地との距離を計算
-            float distanceToTarget = Vector2.Distance(_observer.position, _target.position);
+            float distanceToTarget = Vector2.Distance(_observer.position, _target.position);              // 敵の位置と目的地との距離を計算
 
-            // 距離が指定した範囲内にあるかチェック
-            if (distanceToTarget <= _range)
+            if (distanceToTarget <= _moveLine)                                                            // 近すぎ　後退
             {
                 Vector2 direction = -1 * (_target.position - _observer.position).normalized;
 
-                // Rigidbody2Dに力を加えて移動させます。
                 _rigidbody.AddForce(direction * _speed);
             }
-            else
+            else if (distanceToTarget <= _moveLine　+ _movelineRange)                                     //動かない真ん中レンジ
             {
-                // 目的地に向かって力を加えるコードをここに記述
 
-                // 目的地へのベクトルを計算し、正規化（長さが1になる）します。
-                Vector2 direction = (_target.position - _observer.position).normalized;
+            }
+            else                                                                                           //範囲外　近づく
+            {
 
-                // Rigidbody2Dに力を加えて移動させます。
-                _rigidbody.AddForce(direction * _speed);
+                Vector2 direction = (_target.position - _observer.position).normalized;                   // 目的地へのベクトルを計算し、正規化（長さが1になる）します。
+
+                _rigidbody.AddForce(direction * _speed);                                                  // Rigidbody2Dに力を加えて移動させます。
+
             }
         }
     }
