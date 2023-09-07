@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     [SerializeField] GameObject _bullet;
-    [SerializeField] Transform _spawnTransForm;
+    [SerializeField] Transform[] _spawnTransForms;
     [SerializeField] int _damage = -10;
     [SerializeField] float _fireCD = 3f;
     [SerializeField] float _bulletSpeed = 10;
@@ -33,12 +33,19 @@ public class Fire : MonoBehaviour
     private void FireBullet()
     {
         // 新しい弾丸を生成する
-       GameObject newBullet =  Instantiate(_bullet, _spawnTransForm);
+        foreach (var _spawnTransForm in _spawnTransForms)
+        {
+            GameObject newBullet = Instantiate(_bullet, _spawnTransForm);
 
-        Bullet a = newBullet.GetComponent<Bullet>();
-        a.DestoryBullet(_bulletLife);
-        a.SetdamageOrHealValue(_damage);
-        newBullet.transform.parent = null;
-        newBullet.GetComponent<Rigidbody2D>().AddForce(transform.up*_bulletSpeed);
+            Bullet a = newBullet.GetComponent<Bullet>();
+            a.DestoryBullet(_bulletLife);
+            a.SetdamageOrHealValue(_damage);
+            newBullet.transform.parent = null;
+
+            Rigidbody2D bulletRigidbody = newBullet.GetComponent<Rigidbody2D>();
+
+            // プレイヤーの速度を取得して、それを弾丸に加える
+            bulletRigidbody.AddForce((Vector2)a.transform.up * _bulletSpeed + GetComponent<Rigidbody2D>().velocity);
+        }
     }
 }

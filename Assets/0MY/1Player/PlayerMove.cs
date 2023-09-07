@@ -18,22 +18,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        _rb2D.AddForce(transform.up * _moveSpeed * Input.GetAxisRaw("Vertical"));
 
-        if (Input.GetAxisRaw("Vertical") > 0)
-        {
-            _rb2D.AddForce(transform.up * _moveSpeed);
-        }
-        if (Input.GetAxisRaw("Vertical") < 0)
-        {
-            _rb2D.AddForce((-transform.up) * _moveSpeed);
-        }
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            _rb2D.AddTorque(-rotation_speed );
-        }
-        if (Input.GetAxisRaw("Horizontal") < 0)
-        {
-            _rb2D.AddTorque(rotation_speed );
-        }
+        _rb2D.AddTorque(-1 * rotation_speed * Input.GetAxisRaw("Horizontal"));
+
     }
 }
