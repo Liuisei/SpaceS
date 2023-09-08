@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2980459670780519323}
   - component: {fileID: 339378215148582289}
   - component: {fileID: 9113706222275265401}
+  - component: {fileID: 1091359849494778454}
   m_Layer: 3
   m_Name: CruiserAI
   m_TagString: Untagged
@@ -166,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTo: {fileID: 9113706222275265401}
+  cruiserRotation: {fileID: 1091359849494778454}
 --- !u!114 &9113706222275265401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,11 +181,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _observer: {fileID: 2558640721651169452}
-  _moveLine: 2.21
+  _executer: {fileID: 2558640721651169452}
+  _moveLine: 2.93
   _movelineRange: 1.26
-  _speed: 9.12
+  _speed: 58.5
   _movePremission: 0
+  cruiserTogether: 1
+  _enumPosition: 0
+--- !u!114 &1091359849494778454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4188626859894563775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221ff3dd754b59b4285cf2ac10d45e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformTarget: {fileID: 0}
+  _executor: {fileID: 2558640721651169452}
 --- !u!1 &4361352096845310146
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +298,6 @@ GameObject:
   - component: {fileID: 6697511390709560277}
   - component: {fileID: 5940665735383665918}
   - component: {fileID: 8321474551313522765}
-  - component: {fileID: 6297063869460240852}
   - component: {fileID: 2907291679854779931}
   m_Layer: 3
   m_Name: CruiserHealer
@@ -319,9 +336,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1.44
-  m_AngularDrag: 0.05
+  m_Mass: 5
+  m_LinearDrag: 0.29
+  m_AngularDrag: 0.3
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -347,10 +364,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 3698058520673046559, guid: 2e9a2287fe04cba4dbd12928d99a3de0, type: 3}
-  _spawnTransForm: {fileID: 6857888934813643765}
+  _spawnTransForms: []
   _damage: -10
   _fireCD: 2.21
-  _bulletSpeed: 150
+  _bulletSpeed: 123.2
   _bulletLife: 4.44
 --- !u!58 &8321474551313522765
 CircleCollider2D:
@@ -387,21 +404,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6297063869460240852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099328710577389495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb885758d605314da1471f12b827ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tergetTransform: {fileID: 0}
-  _observer: {fileID: 2558640721651169452}
-  _permission: 1
 --- !u!114 &2907291679854779931
 MonoBehaviour:
   m_ObjectHideFlags: 0

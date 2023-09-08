@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MoveTo : MonoBehaviour
 {
     [SerializeField] Transform _target;   // 移動の目標となるTransform
-    [SerializeField] Transform _observer; // 移動するTransform
+    [SerializeField] Transform _executer; // 移動するTransform
     [Range(1, 10)] [SerializeField] float _moveLine = 10;     // 移動を始める範囲
     [Range(1,  5)] [SerializeField] float _movelineRange = 2;     // 移動を始める範囲
 
@@ -13,35 +14,75 @@ public class MoveTo : MonoBehaviour
     [SerializeField] bool _movePremission = false; // 移動を許可するかどうかのフラグ
     private Rigidbody2D _rigidbody;
 
+    bool cdMovetoPosition = false;
+    [SerializeField] bool cruiserTogether = true;
+
+    Vector3 _position;
+    enum CuriserPosition
+    {
+        UP, DOWN, LEFT, RIGHT
+    }
+
+    [SerializeField] CuriserPosition _enumPosition = CuriserPosition.UP;
+
     private void Start()
     {
-        _rigidbody = _observer.GetComponent<Rigidbody2D>();
+        _rigidbody = _executer.GetComponent<Rigidbody2D>();
+
     }
 
     private void FixedUpdate()
     {
         if (_movePremission == true && _target != null)
         {
-            float distanceToTarget = Vector2.Distance(_observer.position, _target.position);              // 敵の位置と目的地との距離を計算
+            float distanceToTarget = Vector2.Distance(_executer.position, _target.position );              // 敵の位置と目的地との距離を計算
 
             if (distanceToTarget <= _moveLine)                                                            // 近すぎ　後退
             {
-                Vector2 direction = -1 * (_target.position - _observer.position).normalized;
+                Vector2 direction = -1 * (_target.position - _executer.position).normalized;
 
                 _rigidbody.AddForce(direction * _speed);
+
+
+                if (distanceToTarget <= _moveLine / 2)
+                {
+                    _rigidbody.velocity = new Vector2(direction.x, direction.y)*_speed/9f;
+                }
             }
             else if (distanceToTarget <= _moveLine　+ _movelineRange)                                     //動かない真ん中レンジ
             {
-
+//                StartCoroutine(MovetoPosition());
             }
             else                                                                                           //範囲外　近づく
             {
 
-                Vector2 direction = (_target.position - _observer.position).normalized;                   // 目的地へのベクトルを計算し、正規化（長さが1になる）します。
+                Vector2 direction = (_target.position - _executer.position).normalized;                   // 目的地へのベクトルを計算し、正規化（長さが1になる）します。
 
-                _rigidbody.AddForce(direction * _speed);                                                  // Rigidbody2Dに力を加えて移動させます。
+                _rigidbody.AddForce(direction * _speed);
+
+                // Rigidbody2Dに力を加えて移動させます。
 
             }
+
+            if (cruiserTogether == true)
+            {
+                _executer.transform.GetComponent<Rigidbody2D>().AddForce(_target.transform.GetComponent<Rigidbody2D>().velocity);
+            }
+        }
+    }
+    IEnumerator MovetoPosition()
+    {
+        if (cdMovetoPosition == false)
+        {
+            cdMovetoPosition = true;
+            yield return new WaitForSeconds(0.3f);
+            switch (_enumPosition)
+            {
+                case CuriserPosition.UP:
+                    _rigidbody.AddForce(_executer.transform.up * _speed);
+                    break;
+            }
+            cdMovetoPosition = false;
         }
     }
 
