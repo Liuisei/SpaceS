@@ -13,7 +13,7 @@ public class SpacecraftCarrier : MonoBehaviour
     [SerializeField] Transform _spawnTransform;
     [SerializeField] Transform _backTransform;
 
-    bool _attack = false;
+    [SerializeField] bool _attack = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
