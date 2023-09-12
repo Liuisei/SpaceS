@@ -7,6 +7,8 @@ public class EnemyHP : HP
 
     [SerializeField] GameObject[] _dropItems; // ドロップアイテムのプレハブ配列
     [SerializeField] SpriteRenderer _spriteRenderer;
+
+    [SerializeField] bool doonce = true;
     public override void Start()
     {
         base.Start();
@@ -14,9 +16,10 @@ public class EnemyHP : HP
     public override void HpUnder0()
     {
         base.HpUnder0();
-
-        if (_dropItems.Length > 0)
+        
+        if (_dropItems.Length > 0 && doonce == true)
         {
+            doonce = false;
             // ドロップアイテムの配列からランダムに選択
             GameObject selectedDropItem = _dropItems[Random.Range(0, _dropItems.Length)];
 

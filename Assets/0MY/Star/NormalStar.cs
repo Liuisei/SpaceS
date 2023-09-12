@@ -5,9 +5,9 @@ using UnityEngine;
 public class NormalStar : MonoBehaviour
 {
     [SerializeField] int _starPower = 5;
-    public void Starpower(int power)
+    public void StarPowerChange(int power)
     {
         _starPower += power;
-        Debug.Log(power + "sssssssssssssssssssssssssssssssssssssssssssssss");
+        Debug.Log(_starPower + "StarPower");
     }
 }

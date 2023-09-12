@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3986218685352122013}
   - component: {fileID: -5869742338865437015}
   - component: {fileID: 1950178666552187209}
+  - component: {fileID: 8750031572480741190}
+  - component: {fileID: 8497768610549322524}
   m_Layer: 0
   m_Name: Frighter1
   m_TagString: Untagged
@@ -142,7 +144,8 @@ MonoBehaviour:
   sliderHP: {fileID: 0}
   maxHP: 500
   hp: 500
-  _dropItems: []
+  _dropItems:
+  - {fileID: 6809131946350805268, guid: 46309ee81fba6624fa1700cbdff63901, type: 3}
   _spriteRenderer: {fileID: 8754178093747583820}
 --- !u!50 &-5869742338865437015
 Rigidbody2D:
@@ -206,6 +209,56 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.484375
+--- !u!58 &8750031572480741190
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536173568950245058}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.03
+--- !u!114 &8497768610549322524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536173568950245058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643a9812641a6d24583c2afb0a4d4891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frighterPower: 5
+  frightBoxs: {fileID: 0}
+  frightBoxTransform: {fileID: 0}
 --- !u!1 &738868837375271598
 GameObject:
   m_ObjectHideFlags: 0
