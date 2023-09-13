@@ -147,6 +147,7 @@ MonoBehaviour:
   _dropItems:
   - {fileID: 6809131946350805268, guid: 46309ee81fba6624fa1700cbdff63901, type: 3}
   _spriteRenderer: {fileID: 8754178093747583820}
+  doonce: 1
 --- !u!50 &-5869742338865437015
 Rigidbody2D:
   serializedVersion: 4
@@ -257,8 +258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frighterPower: 5
-  frightBoxs: {fileID: 0}
-  frightBoxTransform: {fileID: 0}
+  frightBoxs: []
+  frightBoxs2: []
+  frightBoxTransforms:
+  - {fileID: 4840573760404926201}
+  - {fileID: 8794110189381326707}
 --- !u!1 &738868837375271598
 GameObject:
   m_ObjectHideFlags: 0
