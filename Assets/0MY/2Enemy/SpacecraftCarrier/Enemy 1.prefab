@@ -82,7 +82,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8125, y: 0.90625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -107,6 +107,7 @@ MonoBehaviour:
   _dropItems:
   - {fileID: 5141920728841012450, guid: 82ef4027098799c4a916f00f3c0a7b68, type: 3}
   _spriteRenderer: {fileID: 5333215805277301560}
+  doonce: 1
 --- !u!50 &7758808230527141345
 Rigidbody2D:
   serializedVersion: 4

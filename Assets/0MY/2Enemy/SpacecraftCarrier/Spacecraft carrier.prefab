@@ -105,9 +105,9 @@ MonoBehaviour:
   _spaceShipTipe:
   - {fileID: 3213092556229992604, guid: 111ab5e7759b38541bb28062ade46ef0, type: 3}
   _nowAttackers: []
-  _carrierSerchRange: 10
   _spawnTransform: {fileID: 5811568508618490588}
   _backTransform: {fileID: 5155155293785860074}
+  _attack: 0
 --- !u!1 &4195143722336297610
 GameObject:
   m_ObjectHideFlags: 0

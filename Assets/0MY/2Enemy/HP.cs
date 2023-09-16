@@ -5,16 +5,24 @@ using UnityEngine.UI;
 public abstract class HP : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI hpText;        // HP表示用のUIテキスト
-    [SerializeField] Slider sliderHP;               //HPslider
-    [SerializeField] int maxHP = 10;　              //最大HP
-    [SerializeField] int hp = 10;   　　　　        //今のHP
+    [SerializeField] Slider sliderHP;               // HPslider
+    [SerializeField] int maxHP = 10;　              // 最大HP
+    [SerializeField] int hp = 10;                   // 今のHP
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] bool colorChange = true;
 
     /// <summary>         変数         </summary>///
     public virtual void Start()
     {
         UpdateHPText(); // 初期値のHP表示を更新する
     }
-
+    public void FixedUpdate()
+    {
+        if (spriteRenderer != null && colorChange == true)
+        {
+            spriteRenderer.color = Color.Lerp(Color.red, Color.white, (float)GetHP() / (float)GetMaxHP());
+        }
+    }
     public void ChangeHP(int damageOrHeal)
     {
         hp += damageOrHeal;
@@ -30,7 +38,6 @@ public abstract class HP : MonoBehaviour
 
         UpdateHPText(); // HP表示を更新する
     }
-
     public void UpdateHPText()
     {
         if (sliderHP)
@@ -50,12 +57,10 @@ public abstract class HP : MonoBehaviour
     {
         hp = maxHP;
     }
-
     public int GetHP()
     {
         return hp;
     }
-
     public int GetMaxHP()
     {
         return maxHP;

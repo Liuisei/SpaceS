@@ -6,7 +6,6 @@ public class EnemyHP : HP
 {
 
     [SerializeField] GameObject[] _dropItems; // ドロップアイテムのプレハブ配列
-    [SerializeField] SpriteRenderer _spriteRenderer;
 
     [SerializeField] bool doonce = true;
     public override void Start()
@@ -38,11 +37,5 @@ public class EnemyHP : HP
         // 敵のゲームオブジェクトを破棄
         Destroy(gameObject);
     }
-    private void FixedUpdate()
-    {
-        if(_spriteRenderer != null)
-        {
-            _spriteRenderer.color = Color.Lerp(Color.red, Color.white, (float)GetHP() / (float)GetMaxHP());
-        }
-    }
+
 }
