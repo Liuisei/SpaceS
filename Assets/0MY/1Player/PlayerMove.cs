@@ -10,7 +10,6 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody2D _rb2D;
 
-
     private void Start()
     {
         _rb2D = GetComponent<Rigidbody2D>();
@@ -18,9 +17,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rb2D.AddForce(transform.up * _moveSpeed * Input.GetAxisRaw("Vertical"));
-
-        _rb2D.AddTorque(-1 * rotation_speed * Input.GetAxisRaw("Horizontal"));
-
+        float h = Input.GetAxisRaw("Horizontal"); // …•½•ûŒü‚Ì“ü—Í‚ğŒŸo‚·‚é
+        float v = Input.GetAxisRaw("Vertical"); // ‚’¼•ûŒü‚Ì“ü—Í‚ğŒŸo‚·‚é
+        _rb2D.AddForce(new Vector2(h, v) * _moveSpeed);
     }
 }

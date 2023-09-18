@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 981809669142654438}
   - component: {fileID: 7758808230527141345}
   - component: {fileID: 953703171485962238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,9 +104,10 @@ MonoBehaviour:
   sliderHP: {fileID: 0}
   maxHP: 100
   hp: 100
+  spriteRenderer: {fileID: 0}
+  colorChange: 1
   _dropItems:
   - {fileID: 5141920728841012450, guid: 82ef4027098799c4a916f00f3c0a7b68, type: 3}
-  _spriteRenderer: {fileID: 5333215805277301560}
   doonce: 1
 --- !u!50 &7758808230527141345
 Rigidbody2D:
@@ -184,7 +185,7 @@ GameObject:
   - component: {fileID: 892671251161550204}
   - component: {fileID: 6415458963743564594}
   - component: {fileID: 7893823003046724565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +291,6 @@ MonoBehaviour:
   _speed: 10
   _movePremission: 0
   cruiserTogether: 1
-  _enumPosition: 0
 --- !u!114 &7893823003046724565
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class ItemCoin : MonoBehaviour
     {
         if (collision.TryGetComponent<PlayerMove>(out _))
         {
-            StageManager.instance.ChangePoint(_coinValue);
+            DataManager.instance.ChangePoint(_coinValue);
             Debug.Log("point change");
 
             DestoryCoin(0);

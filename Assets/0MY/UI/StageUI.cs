@@ -25,7 +25,7 @@ public class StageUI : MonoBehaviour
 
             _hp.SetText(StageManager.instance.GetHP() + "/" + StageManager.instance.GetMaxHP());
 
-            _point.SetText("COIN:"+StageManager.instance.GetPoint());
+            _point.SetText("COIN:"+DataManager.instance.GetPoint());
         }
     }
 }

@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] int _damageOrHeal = -1; // ダメージまたは回復量
 
+    [SerializeField] bool _razer = false;
     public void SetdamageOrHealValue(int damageOrHealValue)
     {
         _damageOrHeal = damageOrHealValue;
@@ -12,25 +13,29 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<HP>(out HP hp))//out HP hp (null chack)
+        if (!_razer)
         {
-            hp.ChangeHP(_damageOrHeal); // 取得したHPスクリプトのChangeHP関数を呼び出す
-            DestoryBullet(0);
-            Debug.Log("hp");
+            if (collision.gameObject.TryGetComponent<HP>(out HP hp))//out HP hp (null chack)
+            {
+                hp.ChangeHP(_damageOrHeal); // 取得したHPスクリプトのChangeHP関数を呼び出す
+                DestoryBullet(0);
+                Debug.Log("hp");
+            }
+            Debug.Log("hit");
         }
-        Debug.Log("hit");
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<HP>(out HP hp))
+        if (_razer)
         {
-            hp.ChangeHP(_damageOrHeal); // 取得したHPスクリプトのChangeHP関数を呼び出す
-            Debug.Log("hpb");
-
+            if (collision.gameObject.TryGetComponent<HP>(out HP hp))
+            {
+                hp.ChangeHP(_damageOrHeal); // 取得したHPスクリプトのChangeHP関数を呼び出す
+                Debug.Log("hpb");
+            }
+            Debug.Log("hitb");
         }
-        Debug.Log("hitb");
     }
 
 

@@ -19,11 +19,8 @@ public class StageManager : MonoBehaviour
 
     }
 
-
-
     [SerializeField] int _playerHP = 100;
     [SerializeField] int _playerMaxHP = 100;
-    [SerializeField] int _point = 1000;
 
     public void ChangeHP(int damageOrHeal)
     {
@@ -40,33 +37,7 @@ public class StageManager : MonoBehaviour
 
     }
 
-    public void ChangePoint(int value)
-    {
-
-
-        if (_point + value <= 0)
-        {
-            PointCantBuy();
-        }
-        else if (_point > 100000000)
-        {
-            PointMax();
-        }
-        else
-        {
-            _point += value;
-        }
-    }
-
-    private void PointCantBuy()
-    {
-        Debug.Log("player hp under 0");
-    }
-
-    private void PointMax()
-    {
-        Debug.Log("point over max");
-    }
+   
     private void HPunder0()
     {
         Debug.Log("player hp under 0");
@@ -88,9 +59,6 @@ public class StageManager : MonoBehaviour
         return _playerMaxHP;
     }
 
-    public int GetPoint()
-    {
-        return _point;
-    }
+
 
 }

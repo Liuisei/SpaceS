@@ -14,16 +14,9 @@ public class MoveTo : MonoBehaviour
     [SerializeField] bool _movePremission = false; // 移動を許可するかどうかのフラグ
     private Rigidbody2D _rigidbody;
 
-    bool cdMovetoPosition = false;
     [SerializeField] bool cruiserTogether = true;
 
     Vector3 _position;
-    enum CuriserPosition
-    {
-        UP, DOWN, LEFT, RIGHT
-    }
-
-    [SerializeField] CuriserPosition _enumPosition = CuriserPosition.UP;
 
     private void Start()
     {
@@ -51,40 +44,22 @@ public class MoveTo : MonoBehaviour
             }
             else if (distanceToTarget <= _moveLine　+ _movelineRange)                                     //動かない真ん中レンジ
             {
-//                StartCoroutine(MovetoPosition());
+
             }
             else                                                                                           //範囲外　近づく
             {
-
                 Vector2 direction = (_target.position - _executer.position).normalized;                   // 目的地へのベクトルを計算し、正規化（長さが1になる）します。
 
-                _rigidbody.AddForce(direction * _speed);
-
-                // Rigidbody2Dに力を加えて移動させます。
-
+                _rigidbody.AddForce(direction * _speed);                                                  // Rigidbody2Dに力を加えて移動させます。
             }
 
-            if (cruiserTogether == true)
+            if (cruiserTogether == true)                                                                    //PLAYER と一緒に動く
             {
                 _executer.transform.GetComponent<Rigidbody2D>().AddForce(_target.transform.GetComponent<Rigidbody2D>().velocity);
             }
         }
     }
-    IEnumerator MovetoPosition()
-    {
-        if (cdMovetoPosition == false)
-        {
-            cdMovetoPosition = true;
-            yield return new WaitForSeconds(0.3f);
-            switch (_enumPosition)
-            {
-                case CuriserPosition.UP:
-                    _rigidbody.AddForce(_executer.transform.up * _speed);
-                    break;
-            }
-            cdMovetoPosition = false;
-        }
-    }
+ 
 
     public void SetMovePremission(bool premisson)
     {

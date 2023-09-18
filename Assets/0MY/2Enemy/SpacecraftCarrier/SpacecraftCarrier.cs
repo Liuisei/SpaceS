@@ -29,6 +29,7 @@ public class SpacecraftCarrier : MonoBehaviour
         {
             _attack = false;
         }
+
     }
 
     IEnumerator SpawnSpaceShip()
@@ -37,7 +38,7 @@ public class SpacecraftCarrier : MonoBehaviour
         {
             SpawnShip();
              yield return new WaitForSeconds(_carrierAttackSpeed);
-            SpawnSpaceShip();
+            StartCoroutine(SpawnSpaceShip());
         }
     }
 
