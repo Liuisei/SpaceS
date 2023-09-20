@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -37,7 +39,7 @@ public class DataManager : MonoBehaviour
         else if (_point > 100000000)
         {
             PointMax();
-            _point =      100000000;
+            _point = 100000000;
         }
         else
         {
@@ -52,11 +54,16 @@ public class DataManager : MonoBehaviour
 
     private void PointCantBuy()
     {
-        Debug.Log("player hp under 0");
+        Debug.Log("playerGOBJ hp under 0");
     }
 
     private void PointMax()
     {
         Debug.Log("point over max");
+    }
+
+    public void GameScene(int i)
+    {
+        SceneManager.LoadScene(i);
     }
 }
