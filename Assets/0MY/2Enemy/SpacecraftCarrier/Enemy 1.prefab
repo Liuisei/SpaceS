@@ -307,5 +307,5 @@ MonoBehaviour:
   _spawnTransForm: {fileID: 3396242780660240887}
   _damage: -10
   _fireCD: 3
-  _bulletSpeed: 10
+  _bulletSpeed: 50
   _bulletLife: 10

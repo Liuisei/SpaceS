@@ -136,11 +136,12 @@ MonoBehaviour:
   sliderHP: {fileID: 0}
   maxHP: 100
   hp: 100
+  spriteRenderer: {fileID: 0}
+  colorChange: 1
   _dropItems:
-  - {fileID: 7099328710577389495, guid: f0ddbb87448050847a21ce38c820ff00, type: 3}
-  - {fileID: 7099328710577389495, guid: b53c9cb992c8a8c43acfd11fb47012b9, type: 3}
-  - {fileID: 7099328710577389495, guid: d93ee4636ad297a48a69e1a96a519687, type: 3}
-  _spriteRenderer: {fileID: 9109483034601362495}
+  - {fileID: 1577855665805912, guid: 9d7e1346adf6ccf4ca1c9d50ebc97681, type: 3}
+  - {fileID: 1577855665805912, guid: 9d7e1346adf6ccf4ca1c9d50ebc97681, type: 3}
+  - {fileID: 1577855665805912, guid: 9d7e1346adf6ccf4ca1c9d50ebc97681, type: 3}
   doonce: 1
 --- !u!50 &7258617279714933978
 Rigidbody2D:

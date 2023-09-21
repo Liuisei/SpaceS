@@ -21,6 +21,12 @@ public class Bullet : MonoBehaviour
                 DestoryBullet(0);
                 Debug.Log("hp");
             }
+            else if (collision.gameObject.TryGetComponent<PlayerMove>(out _))
+            {
+                StageManager.instance.ChangeHP(_damageOrHeal);
+                DestoryBullet(0);
+
+            }
             Debug.Log("hit");
         }
     }

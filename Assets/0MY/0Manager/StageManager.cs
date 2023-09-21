@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class StageManager : MonoBehaviour
     private void HPunder0()
     {
         Debug.Log("playerGOBJ hp under 0");
+        SceneManager.LoadScene(0);
     }
 
     private void HPOverMax()

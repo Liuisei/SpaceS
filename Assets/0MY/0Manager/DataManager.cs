@@ -20,6 +20,7 @@ public class DataManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -30,8 +31,6 @@ public class DataManager : MonoBehaviour
 
     public void ChangePoint(int value)
     {
-
-
         if (_point + value < 0)
         {
             PointCantBuy();

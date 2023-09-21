@@ -1713,6 +1713,106 @@ PrefabInstance:
       propertyPath: _point
       value: 3000
       objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[2].ship
+      value: 
+      objectReference: {fileID: 1577855665805912, guid: e4902c04a22743348b2282dd0d144035, type: 3}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[3].ship
+      value: 
+      objectReference: {fileID: 1577855665805912, guid: 6deda0ab69ae3dc449175a0e42b0c085, type: 3}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[4].ship
+      value: 
+      objectReference: {fileID: 1577855665805912, guid: bd2b5ff695343a24d8c0b00bddc7a70e, type: 3}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[5].ship
+      value: 
+      objectReference: {fileID: 1577855665805912, guid: 71923d217685d004cb60a8ceb38d3aa6, type: 3}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[6].ship
+      value: 
+      objectReference: {fileID: 1577855665805912, guid: 26674d9435f8d5c468e88cedee318a78, type: 3}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[7].ship
+      value: 
+      objectReference: {fileID: 1577855665805912, guid: 98172d1db8c99224ab1c81c1c762c220, type: 3}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[8].ship
+      value: 
+      objectReference: {fileID: 1577855665805912, guid: 98172d1db8c99224ab1c81c1c762c220, type: 3}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[8].shipBuy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[0].shipName
+      value: RedFly
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[1].shipName
+      value: BigGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[2].shipCost
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[2].shipName
+      value: HayaBusa
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[3].shipCost
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[3].shipName
+      value: Ten
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[4].shipCost
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[4].shipName
+      value: Razer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[5].shipCost
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[5].shipName
+      value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[6].shipCost
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[6].shipName
+      value: Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[7].shipCost
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[7].shipName
+      value: King
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[8].shipCost
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854900530398184322, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
+      propertyPath: shipDatas.Array.data[8].shipName
+      value: King
+      objectReference: {fileID: 0}
     - target: {fileID: 8034612523673028758, guid: cafa00745178673448e0a39a73d4dfa8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1316.5726

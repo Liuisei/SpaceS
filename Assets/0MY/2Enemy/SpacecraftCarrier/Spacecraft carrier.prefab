@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _carrierPower: 10
   _carrierPowerMax: 10
-  _carrierAttackSpeed: 10
+  _carrierAttackSpeed: 1
   _spaceShipTipe:
   - {fileID: 3213092556229992604, guid: 111ab5e7759b38541bb28062ade46ef0, type: 3}
   _nowAttackers: []
