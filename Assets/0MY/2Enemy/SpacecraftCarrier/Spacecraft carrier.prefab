@@ -273,7 +273,8 @@ MonoBehaviour:
   hp: 3000
   spriteRenderer: {fileID: 3343803408601175807}
   colorChange: 1
-  _dropItems: []
+  _dropItems:
+  - {fileID: 5141920728841012450, guid: 82ef4027098799c4a916f00f3c0a7b68, type: 3}
   doonce: 1
 --- !u!1 &4195143722336297610
 GameObject:

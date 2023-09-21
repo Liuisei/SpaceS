@@ -12,6 +12,9 @@ public class EnemyAI : MonoBehaviour
     Transform _terget;
 
     Collider2D _tergetCollider;
+    private void Start()
+    {
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,6 +48,8 @@ public class EnemyAI : MonoBehaviour
             enemyLookPlayer.SetPremission(false);
             Debug.Log("AI csrch leave");
             enemyAttack.SetisFire(false);
+            enemyMoveTo.SetMovePremission(false);
+
 
         }
     }

@@ -18,4 +18,10 @@ public class HomeUI : MonoBehaviour
             _shipCost.SetText("$:" + DataManager.instance.shipDatas[DataManager.instance.homeShip].shipCost);
         }
     }
+
+
+    public void Scene(int i)
+    {
+        DataManager.instance.GameScene(i);
+    }
 }
