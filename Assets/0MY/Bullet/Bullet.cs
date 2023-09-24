@@ -6,6 +6,15 @@ public class Bullet : MonoBehaviour
     [SerializeField] int _damageOrHeal = -1; // ダメージまたは回復量
 
     [SerializeField] bool _razer = false;
+
+    [SerializeField] GameObject _fireFX;
+
+    [SerializeField] GameObject _fireend;
+
+    private void Start()
+    {
+        Instantiate(_fireFX,transform.position,transform.rotation);
+    }
     public void SetdamageOrHealValue(int damageOrHealValue)
     {
         _damageOrHeal = damageOrHealValue;
@@ -19,12 +28,16 @@ public class Bullet : MonoBehaviour
             {
                 hp.ChangeHP(_damageOrHeal); // 取得したHPスクリプトのChangeHP関数を呼び出す
                 DestoryBullet(0);
+                Instantiate(_fireend, transform.position, transform.rotation);
+
                 Debug.Log("hp");
             }
             else if (collision.gameObject.TryGetComponent<PlayerMove>(out _))
             {
                 StageManager.instance.ChangeHP(_damageOrHeal);
                 DestoryBullet(0);
+                Instantiate(_fireend, transform.position, transform.rotation);
+
 
             }
             Debug.Log("hit");
@@ -49,4 +62,6 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, destorytime);
     }
+
+ 
 }

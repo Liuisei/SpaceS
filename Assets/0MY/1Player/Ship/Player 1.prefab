@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 100
-  rotation_speed: 1
 --- !u!114 &7915314414768716537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +99,7 @@ MonoBehaviour:
   - {fileID: 7558476776689626276}
   _damage: -38
   _fireCD: 0.1
-  _bulletSpeed: 150
+  _bulletSpeed: 100
   _bulletLife: 4.44
 --- !u!58 &3394655817046113628
 CircleCollider2D:

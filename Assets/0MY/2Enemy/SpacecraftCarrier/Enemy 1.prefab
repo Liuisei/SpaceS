@@ -102,9 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpText: {fileID: 0}
   sliderHP: {fileID: 0}
-  maxHP: 100
-  hp: 100
-  spriteRenderer: {fileID: 0}
+  maxHP: 50
+  hp: 50
+  spriteRenderer: {fileID: 5333215805277301560}
   colorChange: 1
   _dropItems:
   - {fileID: 5141920728841012450, guid: 82ef4027098799c4a916f00f3c0a7b68, type: 3}

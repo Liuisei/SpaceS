@@ -11,6 +11,8 @@ public class EnemyHP : HP
     public override void Start()
     {
         base.Start();
+        SetHP(GetHP() * DataManager.instance.worldLevel);
+
     }
     public override void HpUnder0()
     {

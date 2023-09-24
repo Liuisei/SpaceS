@@ -8,6 +8,7 @@ public class HomeShipCont : MonoBehaviour
     [SerializeField] GameObject NowOBJ = default;
     [SerializeField] GameObject buyBotton;
     [SerializeField] GameObject playBotton;
+    [SerializeField] GameObject[] lvobj;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,11 +48,19 @@ public class HomeShipCont : MonoBehaviour
         if (DataManager.instance.shipDatas[DataManager.instance.homeShip].shipBuy == false)
         {
             buyBotton.SetActive(true);
+            foreach (var item in lvobj)
+            {
+                item.SetActive(false);
+            }
             playBotton.SetActive(false);
         }
         else
         {
             buyBotton.SetActive(false);
+            foreach (var item in lvobj)
+            {
+                item.SetActive(true);
+            }
             playBotton.SetActive(true);
         }
 

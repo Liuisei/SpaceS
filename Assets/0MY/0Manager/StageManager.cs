@@ -7,8 +7,13 @@ using UnityEngine.SceneManagement;
 public class StageManager : MonoBehaviour
 {
     public static StageManager instance = null;
-    public static GameObject playerGOBJ = null;
+    public  GameObject playerGOBJ = null;
     [SerializeField] CinemachineVirtualCamera CinemachineVirtualCamera = null;
+
+    [SerializeField] int _playerHP = 100;
+    [SerializeField] int _playerMaxHP = 100;
+    [SerializeField] GameObject _effectPlayerDestory;
+    [SerializeField] GameObject _endui;
 
     private void Awake()
     {
@@ -24,16 +29,24 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        playerGOBJ = Instantiate(DataManager.instance.shipDatas[DataManager.instance.homeShip].ship, transform);
+        var a = DataManager.instance.shipDatas[DataManager.instance.homeShip];
+        playerGOBJ = Instantiate(a.ship, transform);
         playerGOBJ.GetComponent<PlayerMove>().enabled = true;
+        playerGOBJ.GetComponent<PlayerMove>().SetSpeed(a.speed + a.speed * a.speedLv /10 );  
         playerGOBJ.GetComponent<Fire>().enabled = true;
+        playerGOBJ.GetComponent<Fire>().SetDamege((a.fireDamage + a.fireDamage * a.fireDamageLv /10)*-1);
+        playerGOBJ.GetComponent<Fire>().SetSpeed(a.fireSpeed + a.firespeedLv * a.fireSpeed / 10);
+
         playerGOBJ.GetComponent<LookAtMousePoint>().enabled = true;
         CinemachineVirtualCamera.m_Follow = playerGOBJ.transform;
+
+        _playerMaxHP = a.hp + a.hpLv * a.hp /10;
+        _playerHP =  _playerMaxHP;
+        
     }
 
 
-    [SerializeField] int _playerHP = 100;
-    [SerializeField] int _playerMaxHP = 100;
+
 
     public void ChangeHP(int damageOrHeal)
     {
@@ -54,6 +67,15 @@ public class StageManager : MonoBehaviour
     private void HPunder0()
     {
         Debug.Log("playerGOBJ hp under 0");
+
+        Instantiate(_effectPlayerDestory, playerGOBJ.transform.position, playerGOBJ.transform.rotation);
+        _endui.SetActive(true);
+        playerGOBJ.SetActive(false);
+        Invoke("MoveHome",1.5f);
+    }
+
+    private void MoveHome()
+    {
         SceneManager.LoadScene(0);
     }
 

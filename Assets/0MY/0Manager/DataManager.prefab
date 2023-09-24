@@ -44,12 +44,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1f124e702bd0043a73e7b4bd860768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  homeShip: 0
+  _point: 3000
   shipDatas:
   - ship: {fileID: 1577855665805912, guid: db9995ddcd1eb704698cdcf77f8247ae, type: 3}
-    shipName: Momo
-    hasCar: 0
-    shipCost: 0
+    shipName: RedFly
+    shipBuy: 0
+    shipCost: 100
+    speed: 10
+    hp: 100
+    fireSpeed: 10
+    fireDamage: 10
+    lvBuy: 100
+    speedLv: 1
+    hpLv: 1
+    firespeedLv: 1
+    fireDamageLv: 1
   - ship: {fileID: 1577855665805912, guid: 7d1f77b1721a5084ba4912510ba22259, type: 3}
-    shipName: Apple
-    hasCar: 0
+    shipName: BigGun
+    shipBuy: 0
     shipCost: 3000
+    speed: 20
+    hp: 150
+    fireSpeed: 30
+    fireDamage: 10
+    lvBuy: 200
+    speedLv: 0
+    hpLv: 0
+    firespeedLv: 0
+    fireDamageLv: 0
+  - ship: {fileID: 1577855665805912, guid: e4902c04a22743348b2282dd0d144035, type: 3}
+    shipName: HayaBusa
+    shipBuy: 0
+    shipCost: 6000
+    speed: 0
+    hp: 0
+    fireSpeed: 0
+    fireDamage: 0
+    lvBuy: 0
+    speedLv: 0
+    hpLv: 0
+    firespeedLv: 0
+    fireDamageLv: 0
+  - ship: {fileID: 1577855665805912, guid: 6deda0ab69ae3dc449175a0e42b0c085, type: 3}
+    shipName: Ten
+    shipBuy: 0
+    shipCost: 15000
+    speed: 0
+    hp: 0
+    fireSpeed: 0
+    fireDamage: 0
+    lvBuy: 0
+    speedLv: 0
+    hpLv: 0
+    firespeedLv: 0
+    fireDamageLv: 0
+  - ship: {fileID: 1577855665805912, guid: bd2b5ff695343a24d8c0b00bddc7a70e, type: 3}
+    shipName: Razer
+    shipBuy: 0
+    shipCost: 30000
+    speed: 0
+    hp: 0
+    fireSpeed: 0
+    fireDamage: 0
+    lvBuy: 0
+    speedLv: 0
+    hpLv: 0
+    firespeedLv: 0
+    fireDamageLv: 0
+  - ship: {fileID: 1577855665805912, guid: 71923d217685d004cb60a8ceb38d3aa6, type: 3}
+    shipName: Knight
+    shipBuy: 0
+    shipCost: 60000
+    speed: 0
+    hp: 0
+    fireSpeed: 0
+    fireDamage: 0
+    lvBuy: 0
+    speedLv: 0
+    hpLv: 0
+    firespeedLv: 0
+    fireDamageLv: 0
+  - ship: {fileID: 1577855665805912, guid: 26674d9435f8d5c468e88cedee318a78, type: 3}
+    shipName: Black
+    shipBuy: 0
+    shipCost: 60000
+    speed: 0
+    hp: 0
+    fireSpeed: 0
+    fireDamage: 0
+    lvBuy: 0
+    speedLv: 0
+    hpLv: 0
+    firespeedLv: 0
+    fireDamageLv: 0
+  - ship: {fileID: 1577855665805912, guid: 98172d1db8c99224ab1c81c1c762c220, type: 3}
+    shipName: King
+    shipBuy: 0
+    shipCost: 100000
+    speed: 0
+    hp: 0
+    fireSpeed: 0
+    fireDamage: 0
+    lvBuy: 0
+    speedLv: 0
+    hpLv: 0
+    firespeedLv: 0
+    fireDamageLv: 0

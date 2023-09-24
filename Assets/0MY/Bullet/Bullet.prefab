@@ -129,6 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageOrHeal: -1
   _razer: 0
+  _fireFX: {fileID: 670334114140796827, guid: 2cd59f765c43ecc479738da1a8032fce, type: 3}
+  _fireend: {fileID: 7397822068661339270, guid: b8768dc2c44025f479ab8916640573a4, type: 3}
 --- !u!58 &3459228432051931058
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -7,7 +7,8 @@ public class Fire : MonoBehaviour
     [SerializeField] GameObject _bullet;
     [SerializeField] Transform[] _spawnTransForms;
     [SerializeField] int _damage = -10;
-    [SerializeField] float _fireCD = 3f;
+    [Range(0.1f , 5)] [SerializeField] float _fireCD = 3f;
+    float _damageTime = 30;
     [SerializeField] float _bulletSpeed = 10;
     [SerializeField] float _bulletLife = 10;
 
@@ -22,6 +23,15 @@ public class Fire : MonoBehaviour
             FireBullet();
             StartCoroutine(ResetFireCooldown());
         }
+    }
+    public void SetSpeed(int lv)
+    {
+        _fireCD = _damageTime  /(3f * lv);
+    }
+
+    public void SetDamege(int damege)
+    {
+        _damage = damege;
     }
 
     private IEnumerator ResetFireCooldown()

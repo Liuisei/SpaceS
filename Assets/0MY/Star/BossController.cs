@@ -14,6 +14,12 @@ public class BossController : MonoBehaviour
     [SerializeField] GameObject[] _transportShips;//—A‘—‹@
     [SerializeField] int _transportCD = 3;
     [SerializeField] GameObject[] _matherShips;
+    private bool _attack;
+    private float _carrierAttackSpeed = 0.5f;
+
+
+    [SerializeField] GameObject[] starEnemys;
+    [SerializeField] Transform[] starEnemysTransform;
     void Start()
     {
         StartCoroutine(TransportCD());
@@ -24,15 +30,16 @@ public class BossController : MonoBehaviour
         Debug.Log(_starPower);
         Spawn();
     }
+
+    public void RedCord()
+    {
+    
+    }
     public void Spawn()
     {
         if (_starPower > 0)
         {
-            _starPower -= 1;
-
             int rundonStar = Random.Range(0, _normalstars.Length);
-
-
 
             switch (Random.Range(0, 2))
             {
@@ -43,10 +50,6 @@ public class BossController : MonoBehaviour
                     SpawnMother(rundonStar);
                     break;
             }
-
-
-
-
 
             StartCoroutine(TransportCD());
         }
@@ -68,4 +71,46 @@ public class BossController : MonoBehaviour
         newMother.GetComponent<MoveTo>().SetTarget(_normalstars[tergetStar]);
         newMother.GetComponent<EnemyLookPlayer>().SetTarget(_normalstars[tergetStar]);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.TryGetComponent<PlayerMove>(out _))
+        {
+            _attack = true;
+            StartCoroutine(SpawnSpaceShip());
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.transform.TryGetComponent<PlayerMove>(out _))
+        {
+            _attack = false;
+        }
+
+    }
+
+    IEnumerator SpawnSpaceShip()
+    {
+        if (_attack == true)
+        {
+            SpawnShip();
+            yield return new WaitForSeconds(_carrierAttackSpeed);
+            StartCoroutine(SpawnSpaceShip());
+        }
+    }
+
+    void SpawnShip()
+    {
+        if (_starPower > 0)
+        {
+            _starPower--;
+            Instantiate(starEnemys[Random.Range(0, starEnemys.Length)], starEnemysTransform[Random.Range(0, starEnemysTransform.Length)]);
+            foreach (var item in _normalstars)
+            {
+                item.GetComponent<NormalStar>().SpawnShip();
+            }
+        }
+    }
+
+    
 }

@@ -9,7 +9,9 @@ public class DataManager : MonoBehaviour
     public static DataManager instance = null;
     public int homeShip = 0;
 
+    public int worldLevel = 1;
 
+    public GameObject moveui;
     [SerializeField] int _point = 1000;
 
 
@@ -63,6 +65,19 @@ public class DataManager : MonoBehaviour
 
     public void GameScene(int i)
     {
+        // コルーチンを開始
+        StartCoroutine(LoadSceneWithDelay(i));
+    }
+
+    private IEnumerator LoadSceneWithDelay(int i)
+    {
+        // moveuiをインスタンス化（表示）
+        Instantiate(moveui);
+
+        // 2秒待機
+        yield return new WaitForSeconds(1.0f);
+
+        // シーンをロード
         SceneManager.LoadScene(i);
     }
 }

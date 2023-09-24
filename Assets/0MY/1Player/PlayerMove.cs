@@ -6,13 +6,18 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float _moveSpeed = 1f;
-    [SerializeField] float rotation_speed = 1f;
 
     Rigidbody2D _rb2D;
+
 
     private void Start()
     {
         _rb2D = GetComponent<Rigidbody2D>();
+    }
+
+    public void SetSpeed(int speed)
+    {
+        _moveSpeed = speed;
     }
     // Update is called once per frame
     void FixedUpdate()

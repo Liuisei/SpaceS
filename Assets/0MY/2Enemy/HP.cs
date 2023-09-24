@@ -65,4 +65,10 @@ public abstract class HP : MonoBehaviour
     {
         return maxHP;
     }
+
+    public void SetHP(int value)
+    {
+        hp = value;
+        maxHP = value;
+    }
 }
