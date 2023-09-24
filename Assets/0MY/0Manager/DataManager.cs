@@ -75,7 +75,7 @@ public class DataManager : MonoBehaviour
         Instantiate(moveui);
 
         // 2秒待機
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2f);
 
         // シーンをロード
         SceneManager.LoadScene(i);

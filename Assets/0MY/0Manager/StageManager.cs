@@ -13,7 +13,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] int _playerHP = 100;
     [SerializeField] int _playerMaxHP = 100;
     [SerializeField] GameObject _effectPlayerDestory;
-    [SerializeField] GameObject _endui;
+    [SerializeField] GameObject _gameObjectUIstart;
 
     private void Awake()
     {
@@ -42,9 +42,15 @@ public class StageManager : MonoBehaviour
 
         _playerMaxHP = a.hp + a.hpLv * a.hp /10;
         _playerHP =  _playerMaxHP;
-        
+        Invoke("Startui", 1);
+
     }
 
+
+    private void Startui()
+    {
+        _gameObjectUIstart.SetActive(false);
+    }
 
 
 
@@ -69,14 +75,13 @@ public class StageManager : MonoBehaviour
         Debug.Log("playerGOBJ hp under 0");
 
         Instantiate(_effectPlayerDestory, playerGOBJ.transform.position, playerGOBJ.transform.rotation);
-        _endui.SetActive(true);
         playerGOBJ.SetActive(false);
         Invoke("MoveHome",1.5f);
     }
 
     private void MoveHome()
     {
-        SceneManager.LoadScene(0);
+        DataManager.instance.GameScene(0);
     }
 
     private void HPOverMax()
