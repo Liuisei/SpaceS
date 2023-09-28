@@ -44,6 +44,7 @@ public class StageManager : MonoBehaviour
         _playerHP =  _playerMaxHP;
         Invoke("Startui", 1);
 
+        SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Stage);
     }
 
 

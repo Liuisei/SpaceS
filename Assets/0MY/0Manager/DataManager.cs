@@ -33,6 +33,7 @@ public class DataManager : MonoBehaviour
 
     public void ChangePoint(int value)
     {
+
         if (_point + value < 0)
         {
             PointCantBuy();
@@ -45,6 +46,8 @@ public class DataManager : MonoBehaviour
         else
         {
             _point += value;
+            SoundManager.Instance.PlaySE(SESoundData.SE.Money);
+
         }
     }
 

@@ -20,6 +20,8 @@ public class BossController : MonoBehaviour
 
     [SerializeField] GameObject[] starEnemys;
     [SerializeField] Transform[] starEnemysTransform;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
     void Start()
     {
         StartCoroutine(TransportCD());
@@ -71,13 +73,15 @@ public class BossController : MonoBehaviour
         newMother.GetComponent<MoveTo>().SetTarget(_normalstars[tergetStar]);
         newMother.GetComponent<EnemyLookPlayer>().SetTarget(_normalstars[tergetStar]);
     }
-
+    private Coroutine redlineCoroutine;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.transform.TryGetComponent<PlayerMove>(out _))
         {
             _attack = true;
             StartCoroutine(SpawnSpaceShip());
+            spriteRenderer.color = Color.red;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -85,9 +89,11 @@ public class BossController : MonoBehaviour
         if (collision.transform.TryGetComponent<PlayerMove>(out _))
         {
             _attack = false;
-        }
+            spriteRenderer.color = Color.white;
 
+        }
     }
+
 
     IEnumerator SpawnSpaceShip()
     {

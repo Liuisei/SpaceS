@@ -42,6 +42,8 @@ public class Fire : MonoBehaviour
 
     private void FireBullet()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.Attack);
+
         // êVÇµÇ¢íeä€Çê∂ê¨Ç∑ÇÈ
         foreach (var _spawnTransForm in _spawnTransForms)
         {

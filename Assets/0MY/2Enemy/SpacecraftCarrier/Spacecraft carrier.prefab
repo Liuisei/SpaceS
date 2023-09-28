@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5808821590919032156}
   - component: {fileID: 3757082355204266751}
   - component: {fileID: 8140074564273231131}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Spacecraft carrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5155155293785860074}
   - component: {fileID: 5435971030217002447}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5811568508618490588}
   - component: {fileID: 3171567938209285372}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,10 +13,12 @@ public class HomeShipCont : MonoBehaviour
     void Start()
     {
         SpawnShip();
+        SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Home);
     }
 
     public void ChangeShip(bool i)
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.botton);
         if (i == true)
         {
             Destroy(NowOBJ);
@@ -69,6 +71,8 @@ public class HomeShipCont : MonoBehaviour
 
     public void BuyShip()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.botton);
+
         if (DataManager.instance.shipDatas[DataManager.instance.homeShip].shipBuy == false)
         {
             if(DataManager.instance.shipDatas[DataManager.instance.homeShip].shipCost <= DataManager.instance.GetPoint())

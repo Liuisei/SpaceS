@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NormalStar : MonoBehaviour
 {
     [SerializeField] int _starPower = 10;
 
-    [SerializeField] int _maxStarPower = 10;
 
     [SerializeField] GameObject[] starEnemys;
 
@@ -14,6 +15,12 @@ public class NormalStar : MonoBehaviour
     private bool _attack;
     [SerializeField] private float _carrierAttackSpeed = 0.2f;
 
+    [SerializeField] TextMeshProUGUI textMeshProUGUI;
+
+    private void Start()
+    {
+        _starPower = _starPower * DataManager.instance.worldLevel;
+    }
     public void StarPowerChange(int power)
     {
         _starPower += power;
@@ -40,6 +47,11 @@ public class NormalStar : MonoBehaviour
             _attack = false;
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        textMeshProUGUI.SetText(":"+_starPower+":");
     }
 
     IEnumerator SpawnSpaceShip()

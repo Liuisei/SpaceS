@@ -13,6 +13,7 @@ public class Frighter : MonoBehaviour
 
     private void Start()
     {
+        frighterPower = frighterPower * DataManager.instance.worldLevel ;
         SetBox();
     }
 

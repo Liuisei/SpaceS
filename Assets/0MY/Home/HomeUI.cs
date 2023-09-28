@@ -19,6 +19,8 @@ public class HomeUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI _shipSpeedL;
     [SerializeField] TextMeshProUGUI _shipFireSpeedL;
     [SerializeField] TextMeshProUGUI _shipFireDamageL;
+    [SerializeField] TextMeshProUGUI _woldLevel;
+
 
     [SerializeField] Slider _sliderHP;
     [SerializeField] Slider _sliderSpeed;
@@ -62,13 +64,15 @@ public class HomeUI : MonoBehaviour
             _sliderFireSpeed.value = ((float)data.fireSpeed + (float)data.fireSpeed * data.firespeedLv / 10) / 100;
             _sliderFireDamage.value = ((float)data.fireDamage + (float)data.fireDamage * data.fireDamageLv / 10) / 100;
 
-
+            _woldLevel.SetText("World LV:" + DataManager.instance.worldLevel) ;
 
         }
     }
 
     public void BuyLvspeed()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.botton);
+
         var data = DataManager.instance.shipDatas[DataManager.instance.homeShip];
 
         if (data.speedLv * data.lvBuy <= DataManager.instance.GetPoint())
@@ -80,6 +84,8 @@ public class HomeUI : MonoBehaviour
     }
     public void BuyLvhp()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.botton);
+
         var data = DataManager.instance.shipDatas[DataManager.instance.homeShip];
 
         if (data.hpLv * data.lvBuy <= DataManager.instance.GetPoint())
@@ -91,6 +97,8 @@ public class HomeUI : MonoBehaviour
     }
     public void BuyLvfirespeed()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.botton);
+
         var data = DataManager.instance.shipDatas[DataManager.instance.homeShip];
 
         if (data.firespeedLv * data.lvBuy <= DataManager.instance.GetPoint())
@@ -102,6 +110,8 @@ public class HomeUI : MonoBehaviour
     }
     public void BuyLvfirepower()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.botton);
+
         var data = DataManager.instance.shipDatas[DataManager.instance.homeShip];
 
         if (data.fireDamageLv * data.lvBuy <= DataManager.instance.GetPoint())
@@ -113,6 +123,8 @@ public class HomeUI : MonoBehaviour
     }
     public void Scene(int i)
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.botton);
+
         DataManager.instance.GameScene(i);
     }
 }

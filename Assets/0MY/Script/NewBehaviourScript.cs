@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Daimond : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        DataManager.instance.ChangePoint(1000 * DataManager.instance.worldLevel);
-        SceneManager.LoadScene(0);
-        DataManager.instance.worldLevel++;
+
     }
 
     // Update is called once per frame

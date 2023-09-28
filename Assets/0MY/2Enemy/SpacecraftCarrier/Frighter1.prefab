@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1950178666552187209}
   - component: {fileID: 8750031572480741190}
   - component: {fileID: 8497768610549322524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Frighter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,6 @@ MonoBehaviour:
   _speed: 10
   _movePremission: 1
   cruiserTogether: 0
-  _enumPosition: 0
 --- !u!114 &5488053609825322671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8794110189381326707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4840573760404926201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
