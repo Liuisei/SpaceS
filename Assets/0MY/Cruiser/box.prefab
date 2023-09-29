@@ -140,8 +140,7 @@ MonoBehaviour:
   colorChange: 1
   _dropItems:
   - {fileID: 1577855665805912, guid: 9d7e1346adf6ccf4ca1c9d50ebc97681, type: 3}
-  - {fileID: 1577855665805912, guid: 9d7e1346adf6ccf4ca1c9d50ebc97681, type: 3}
-  - {fileID: 1577855665805912, guid: 9d7e1346adf6ccf4ca1c9d50ebc97681, type: 3}
+  - {fileID: 1577855665805912, guid: 83fbfd0e22e7f444c8ffc6b7e3b120a3, type: 3}
   doonce: 1
 --- !u!50 &7258617279714933978
 Rigidbody2D:

@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossController : MonoBehaviour
 {
     [SerializeField] int _starPower = 10;
-    [SerializeField] int _MaxStarPower = 100;
     [SerializeField] int _starPowerPluseSpeed = 60;
     [SerializeField] int _starPowerPluseValue = 1;
     [SerializeField] bool _PlusePowerOKorNO = true;
@@ -15,7 +14,7 @@ public class BossController : MonoBehaviour
     [SerializeField] int _transportCD = 3;
     [SerializeField] GameObject[] _matherShips;
     private bool _attack;
-    private float _carrierAttackSpeed = 0.5f;
+    private float _carrierAttackSpeed = 2;
 
 
     [SerializeField] GameObject[] starEnemys;
@@ -109,7 +108,6 @@ public class BossController : MonoBehaviour
     {
         if (_starPower > 0)
         {
-            _starPower--;
             Instantiate(starEnemys[Random.Range(0, starEnemys.Length)], starEnemysTransform[Random.Range(0, starEnemysTransform.Length)]);
             foreach (var item in _normalstars)
             {

@@ -33,14 +33,20 @@ public class EnemyAI : MonoBehaviour
 
             enemyMoveTo.SetMovePremission(true);
 
-            enemyAttack.SetisFire(true);
+            Invoke("Fireinvo",1);
 
 
             Debug.Log("AI csrch in");
         }
     }
 
-    
+    public void Fireinvo()
+    {
+        enemyAttack.SetisFire(true);
+
+    }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (_tergetCollider == collision)

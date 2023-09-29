@@ -106,10 +106,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carrierPower: 10
-  _carrierPowerMax: 10
+  _starPoint: 10
   _carrierAttackSpeed: 1
   _spaceShipTipe:
   - {fileID: 3213092556229992604, guid: 111ab5e7759b38541bb28062ade46ef0, type: 3}
+  - {fileID: 3213092556229992604, guid: 2c8603ad796a37441a5c7b54d588e2b7, type: 3}
   _nowAttackers: []
   _spawnTransform: {fileID: 5811568508618490588}
   _backTransform: {fileID: 5155155293785860074}

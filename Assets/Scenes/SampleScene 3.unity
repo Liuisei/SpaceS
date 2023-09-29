@@ -1992,6 +1992,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 188850285389070472, guid: d16921574507ac1469ecde1e3b8f1adb, type: 3}
+      propertyPath: starEnemys.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 188850285389070472, guid: d16921574507ac1469ecde1e3b8f1adb, type: 3}
       propertyPath: _matherShips.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1999,6 +2003,14 @@ PrefabInstance:
       propertyPath: _normalstars.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 188850285389070472, guid: d16921574507ac1469ecde1e3b8f1adb, type: 3}
+      propertyPath: starEnemys.Array.data[1]
+      value: 
+      objectReference: {fileID: 3213092556229992604, guid: 9f700cca935392a4bb914d10be7c96d9, type: 3}
+    - target: {fileID: 188850285389070472, guid: d16921574507ac1469ecde1e3b8f1adb, type: 3}
+      propertyPath: starEnemys.Array.data[2]
+      value: 
+      objectReference: {fileID: 3213092556229992604, guid: 2c8603ad796a37441a5c7b54d588e2b7, type: 3}
     - target: {fileID: 188850285389070472, guid: d16921574507ac1469ecde1e3b8f1adb, type: 3}
       propertyPath: _matherShips.Array.data[0]
       value: 

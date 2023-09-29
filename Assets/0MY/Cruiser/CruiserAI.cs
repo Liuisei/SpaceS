@@ -6,21 +6,20 @@ public class CruiserAI : MonoBehaviour
 {
     [SerializeField] MoveTo moveTo;
     [SerializeField] CruiserRotation cruiserRotation;
-   
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    private void Start()
     {
-        if (moveTo != null && collision.TryGetComponent<PlayerMove>(out _) )
-        {
-            
-            moveTo.SetTarget(collision.transform);
-            moveTo.SetMovePremission(true);
-            cruiserRotation.Settarget(collision.transform);
 
-            Debug.Log("SET CRUISER PLAYER");
 
-        }
-        Debug.Log("CRUISER PLAYER ENTER");
+        moveTo.SetTarget(StageManager.instance.playerGOBJ.transform);
+        moveTo.SetMovePremission(true);
+
+        Debug.Log("SET CRUISER PLAYER");
+
+
     }
+
 
 
 

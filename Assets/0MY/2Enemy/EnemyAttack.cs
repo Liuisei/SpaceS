@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] GameObject _bullet;
-    [SerializeField] Transform _spawnTransForm;
+    [SerializeField] Transform[] _spawnTransForm;
     [SerializeField] int _damage = -10;
     [SerializeField] float _fireCD = 3f;
     [SerializeField] float _bulletSpeed = 10;
@@ -40,13 +40,17 @@ public class EnemyAttack : MonoBehaviour
 
     private void FireBullet()
     {
-        // êVÇµÇ¢íeä€Çê∂ê¨Ç∑ÇÈ
-        GameObject newBullet = Instantiate(_bullet, _spawnTransForm);
+        foreach (Transform t in _spawnTransForm)
+        {
+            GameObject newBullet = Instantiate(_bullet, t);
 
-        Bullet a = newBullet.GetComponent<Bullet>();
-        a.DestoryBullet(_bulletLife);
-        a.SetdamageOrHealValue(_damage);
-        newBullet.transform.parent = null;
-        newBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * _bulletSpeed);
+            Bullet a = newBullet.GetComponent<Bullet>();
+            a.DestoryBullet(_bulletLife);
+            a.SetdamageOrHealValue(_damage);
+            newBullet.transform.parent = null;
+            newBullet.GetComponent<Rigidbody2D>().AddForce(newBullet.transform.up * _bulletSpeed);
+        }
+        // êVÇµÇ¢íeä€Çê∂ê¨Ç∑ÇÈ
+
     }
 }

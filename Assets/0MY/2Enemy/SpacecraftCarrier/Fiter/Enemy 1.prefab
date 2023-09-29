@@ -304,8 +304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 3698058520673046559, guid: 95bd83f1b077d2f4d9ccebac66684f7a, type: 3}
-  _spawnTransForm: {fileID: 3396242780660240887}
-  _damage: -10
-  _fireCD: 3
-  _bulletSpeed: 50
-  _bulletLife: 10
+  _spawnTransForm:
+  - {fileID: 3396242780660240887}
+  _damage: -5
+  _fireCD: 5
+  _bulletSpeed: 100
+  _bulletLife: 5
