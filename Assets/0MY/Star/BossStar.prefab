@@ -438,6 +438,7 @@ MonoBehaviour:
   - {fileID: 0}
   _transportShips:
   - {fileID: 536173568950245058, guid: 12e94ef40ae9cf24c950a1f0a69d6f94, type: 3}
+  - {fileID: 536173568950245058, guid: 78b2509d240be2f42893bc3d98985ac2, type: 3}
   _transportCD: 6
   _matherShips:
   - {fileID: 3536180021162491416, guid: 3cc6ee3c328b0514da63b0db0b5e8996, type: 3}

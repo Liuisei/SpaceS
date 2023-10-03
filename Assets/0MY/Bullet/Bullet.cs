@@ -51,6 +51,8 @@ public class Bullet : MonoBehaviour
             if (collision.gameObject.TryGetComponent<HP>(out HP hp))
             {
                 hp.ChangeHP(_damageOrHeal); // 取得したHPスクリプトのChangeHP関数を呼び出す
+                Instantiate(_fireend, transform.position, transform.rotation);
+
                 Debug.Log("hpb");
             }
             Debug.Log("hitb");

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8400011340071481495}
   - component: {fileID: 4354534775160908969}
   - component: {fileID: 7013140062717483791}
-  m_Layer: 0
+  - component: {fileID: 5806071124549069976}
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 451424545798181004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1036.0513, y: 538.0043, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +43,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451424545798181004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -143,7 +144,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -161,3 +162,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa1d18250fa6674285e895660dd10f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider2: {fileID: 4354534775160908969}
+--- !u!114 &5806071124549069976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451424545798181004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dd3f0d82a460245a77d104acbe469e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageOrHeal: -10000
+  _razer: 1
+  _fireFX: {fileID: 8460667080445658512, guid: a3e2c3406e02f2c4ba86cfb1604277bd, type: 3}
+  _fireend: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}

@@ -65,6 +65,7 @@ public class BossController : MonoBehaviour
         GameObject newTransShip = Instantiate(_transportShips[Random.Range(0, _transportShips.Length)], transform);
         newTransShip.GetComponent<MoveTo>().SetTarget(_normalstars[tergetStar]);
         newTransShip.GetComponent<EnemyLookPlayer>().SetTarget(_normalstars[tergetStar]);
+
     }
     void SpawnMother(int tergetStar)
     {
